@@ -16,14 +16,30 @@ students.forEach(s => {
     studentFirstDiv.append(studentNameTitle)
     studentFirstDiv.append(s.name)
 
+    student.append(studentFirstDiv)
+
     // TODO сконструировать фрагмент поддерева, соответствующий разметке второго вложенного div в представлении студента:
     /*
     * <div>
             <strong>Age: </strong><span>{{age}}</span>&nbsp;&nbsp;<strong>AVG Score: </strong><span>{{score}}</span>
         </div>
     * */
+    //added following lines for AGE
+    const studentSecondDiv = document.createElement('div')
+    const studentAge = document.createElement('strong')
+    studentAge.innerText = 'Age: '
+    studentSecondDiv.append(studentAge)
+    studentSecondDiv.append(s.age)
+    student.append(studentSecondDiv)
 
-    student.append(studentFirstDiv)
+    //added following lines for Average Score
+    const studentThirdDiv = document.createElement('div')
+    const studentAvgScore = document.createElement('strong')
+    studentAvgScore.innerText = 'AvgScore: '
+    studentThirdDiv.append(studentAvgScore)
+    studentThirdDiv.append(s.avgScore)
+    student.append(studentThirdDiv)
+
     // TODO вставить в корневой узел текущего студента сконструированный Вами выше узел второго вложенного div
 
     document.getElementById('root').append(student)
